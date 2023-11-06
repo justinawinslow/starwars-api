@@ -1,0 +1,47 @@
+<style>
+    th, td {
+      padding: 10px;
+      text-align: left;    
+    }
+</style>
+
+<nav>
+    <a routerLink="/home-page">Home Page</a>
+</nav>
+<P></P>
+<nav>
+    <a routerLink="/people-table">List of Star Wars People</a>
+</nav>
+
+<h2>{{ person.name }} Details</h2>
+
+    <table style="width:100%">
+        <tr>
+            <td><b>Person:</b></td>
+            <td>{{ person.name }}</td>
+        </tr>
+        <tr>
+            <td><b>Eye Color:</b></td>
+            <td>{{ person.eye_color }}</td>
+        </tr>
+        <tr>
+            <td><b>Hair Color:</b></td>
+            <td>{{ person.hair_color }}</td>
+        </tr>
+        <tr>
+            <td><b>Height:</b></td>
+            <td>{{ person.height }}</td>
+        </tr>
+        <tr>
+            <td><b>Gender:</b></td>
+            <td>{{ person.gender }}</td>
+        </tr>
+        <tr>
+            <td style="vertical-align:top"><b>Films:</b></td>
+            <td>
+                <li *ngFor="let film of person.films">
+                    {{ film }}
+                </li> 
+            </td>
+        </tr>
+    </table>

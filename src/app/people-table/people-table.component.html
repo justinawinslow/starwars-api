@@ -1,0 +1,27 @@
+<nav>
+  <a routerLink="/home-page">Home Page</a>
+</nav>
+<p>This table contains the basic information for the first ten Star War People of the SWAPI</p>
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+</style>
+<table style="width:100%">
+    <tr>
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Gender</th> 
+      <th>Films</th>
+    </tr>
+    <tr *ngFor="let person of people; index as i">
+      <td><nav><a routerLink="/star-wars-person/{{ i+1 }}">View More Details</a></nav></td>
+      <td>{{ i+1 }}</td>
+      <td>{{ person.name }}</td>
+      <td>{{ person.gender }}</td>
+      <td>{{ person.films.length }}</td>
+    </tr>
+  </table>
